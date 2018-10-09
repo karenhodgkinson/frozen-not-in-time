@@ -1,0 +1,28 @@
+html {
+  font-family: "Fredoka One", sans-serif;
+  color: #990073;
+}
+
+h1 {
+  color: #c09;
+}
+
+.wrapper{
+  padding: 0.5em;
+  background-image: repeating-linear-gradient(-45deg, #b3fbff, #c9fcff 10px, #d4fdff 10px);
+}
+
+.btn-ghost,.btn-ghost:hover,.btn-ghost:visited  {
+  color: #c09;
+  border-color: #990073;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 0.5em;
+  outline: none;
+}
+
+.btn-ghost:hover {
+  background-color: color #c09;
+  color: #c09;
+  border-color: #990073;
+}
