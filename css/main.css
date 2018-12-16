@@ -1,28 +1,231 @@
 html {
   font-family: "Fredoka One", sans-serif;
-  color: #990073;
+  color: #c09;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
 }
 
 h1 {
-  color: #c09;
+  color: #990073;
+  animation: spin 100ms 3s linear forwards;
+  opacity: 0;
 }
 
-.wrapper{
-  padding: 0.5em;
-  background-image: repeating-linear-gradient(-45deg, #b3fbff, #c9fcff 10px, #d4fdff 10px);
+p {
+  animation: spins 100ms 3s linear forwards;
+  max-width: 19em;
+  opacity: 0;
 }
 
-.btn-ghost,.btn-ghost:hover,.btn-ghost:visited  {
+.frozen {
+  position: relative;
+}
+
+.wrapper {
+  background-color: #b3fbff;
+  background-image: repeating-linear-gradient(-33deg, #d4fdff, #d4fdff 1%, #c9fcff 1%, #c9fcff 2%);
+  position: absolute;
+}
+
+.btn-ghost, .btn-ghost:hover, .btn-ghost:visited {
   color: #c09;
   border-color: #990073;
   text-decoration: none;
   border-radius: 3px;
   padding: 0.5em;
   outline: none;
+  animation: blur-button 100ms 3s linear forwards;
 }
 
 .btn-ghost:hover {
-  background-color: color #c09;
+  background-color: #c09;
   color: #c09;
   border-color: #990073;
+}
+
+img {
+  max-width: 130px;
+  display: block;
+  width: 100%;
+}
+
+.vanilla-fudge {
+  position: absolute;
+  top: -600px;
+  left: 20%;
+  z-index: 300;
+  animation: drop-vanilla 300ms 1.25s linear forwards;
+}
+
+.chocolate-chip {
+  position: absolute;
+  top: -600px;
+  left: 20%;
+  z-index: 200;
+  animation: drop-choc 300ms 1s linear forwards;
+}
+
+.mint-chip {
+  position: absolute;
+  top: -600px;
+  left: 20%;
+  z-index: 100;
+  animation: drop-mint 300ms .5s linear forwards;
+}
+
+.cherry {
+  width: 50px;
+  position: absolute;
+  left: 30%;
+  top: -100%;
+  z-index: 4000;
+  animation: drop-cherry 300ms 1.5s linear forwards;
+}
+
+.cone {
+  position: absolute;
+  top: -650px;
+  left: 20%;
+  z-index: 1000;
+  animation: drop-cone 300ms .25s linear forwards;
+}
+
+@keyframes spin {
+
+  0% {
+    transform: rotate(0deg);
+    filter: blur(100px);
+  }
+
+  25% {
+    transform: rotate(-3deg);
+    filter: blur(100px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotate(-10deg);
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes spins {
+
+  0% {
+    transform: rotate(0deg);
+    filter: blur(100px);
+  }
+
+  25% {
+    transform: rotate(-1deg);
+    filter: blur(100px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotate(-6deg);
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes blur-button {
+
+  0% {
+    filter: blur(1000px);
+    transform: scale(1);
+  }
+
+  90% {
+    filter: blur(5px);
+    transform: scale(1);
+  }
+
+  100% {
+    filter: blur(.5px);
+    transform: scale(1);
+  }
+
+}
+
+@keyframes drop-cone {
+
+  0% {
+    transform: translateY(.5px);
+  }
+
+  90% {
+    transform: translateY(650px);
+  }
+
+  100% {
+    transform: translateY(860px);
+  }
+
+}
+
+@keyframes drop-mint {
+
+  0% {
+    transform: translateY(.5px);
+  }
+
+  90% {
+    transform: translateY(515px);
+  }
+
+  100% {
+    transform: translateY(730px);
+  }
+
+}
+
+@keyframes drop-choc {
+
+  0% {
+    transform: translateY(.5px);
+  }
+
+  90% {
+    transform: translateY(470px);
+  }
+
+  100% {
+    transform: translateY(670px);
+  }
+
+}
+
+@keyframes drop-vanilla {
+
+  0% {
+    transform: translateY(.5px);
+  }
+
+  90% {
+    transform: translateY(400px);
+  }
+
+  100% {
+    transform: translateY(600px);
+  }
+
+}
+
+@keyframes drop-cherry {
+
+  0% {
+    transform: translateY(.5px);
+  }
+
+  90% {
+    transform: translateY(150px);
+  }
+
+  100% {
+    transform: translateY(400px);
+  }
+
 }
